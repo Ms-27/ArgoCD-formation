@@ -4,8 +4,14 @@
 
 • Installer argocd-rollouts et kubectl plugin `https://argo-rollouts.readthedocs.io/en/stable/installation/#kubectl-plugin-installation`
 
-• Créer un namespace ‘rollouts’
-• Créer blue-green.yaml pour définir une application ‘bluegreen’ dans le namespace ‘rollouts’ à
+```shell
+brew install argoproj/tap/kubectl-argo-rollouts
+kubectl create namespace argo-rollouts
+kubectl apply -n argo-rollouts -f https://github.com/argoproj/argo-rollouts/releases/latest/download/install.yaml
+```
+
+• Créer un namespace `rollouts`
+• Créer blue-green.yaml pour définir une application `bluegreen` dans le namespace `rollouts` à
 
 partir de cet emplacement `https://github.com/argoproj/rollouts-demo/tree/master/examples/blue-green`
 
@@ -13,13 +19,12 @@ partir de cet emplacement `https://github.com/argoproj/rollouts-demo/tree/master
 • check existence du rollout:
 `kubectl argo rollouts get rollout bluegreen-demo -n rollouts`
 • Deployer une nouvelle version:
-
 `kubectl argo rollouts set image bluegreen-demo -n rollouts bluegreen-demo=argoproj/rollouts-demo:yellow`
-
 • Suivre l’avancement du deployment:
-`kubectl argo rollouts get rollout bluegreen-demo -n rollouts –watch`
+`kubectl argo rollouts get rollout bluegreen-demo -n rollouts --watch`
 
 ### Exercice 2 : Canary
+
 • Créer canary.yaml pour définir une application ‘canary dans le namespace ‘rollouts’ à partir de
 cet emplacement https://github.com/argoproj/rollouts-demo/tree/master/examples/canary
 • sync l’application
