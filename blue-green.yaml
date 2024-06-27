@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/argoproj/rollouts-demo.git
     targetRevision: HEAD
-    path: /examples/blue-green
+    path: examples/blue-green
   destination:
     server: https://kubernetes.default.svc
     namespace: rollouts
