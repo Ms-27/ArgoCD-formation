@@ -1,0 +1,11 @@
+p, role:master, applications, *, */*, allow
+p, role:master, repositories, *, *, allow
+p, role:master, projects, *, *, allow
+
+g, obo, role:master
+
+p, role:deployer, applications, get, */*, allow
+p, role:deployer, applications, override, */*, allow
+p, role:deployer, applications, sync, */*, allow
+
+g, deploy-agent, role:deployer
