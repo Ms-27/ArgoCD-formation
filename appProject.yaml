@@ -43,6 +43,10 @@ spec:
     kind: Ingress
   - group: '*'
     kind: Job
+  - group: '*'
+    kind: Secret
+  - group: '*'
+    kind: ConfigMap
   roles:
   # A role which provides read-only access to all applications in the project
   - name: read-only

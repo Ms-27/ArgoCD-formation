@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helmargo-cm
+  namespace: argocd
+spec:
+  project: spring-apps
+  source:
+    repoURL: https://github.com/Ms-27/DemoHelmChart-cm.git
+    targetRevision: HEAD
+    path: .
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: spring-apps-dev  

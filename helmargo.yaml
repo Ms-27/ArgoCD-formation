@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helmargo
+  namespace: argocd
+spec:
+  syncPolicy:
+    syncOptions:
+    - RespectIgnoreDifferences=true
+  project: spring-apps
+  source:
+    repoURL: https://github.com/Ms-27/DemoHelmChart.git
+    targetRevision: HEAD
+    path: .
+    helm:
+      releaseName: helmargo
+      valueFiles:
+        - values.yaml
+        - dev-values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: spring-apps-dev  
+  ignoreDifferences:
+  - group: '*'
+    kind: Deployment
+    jsonPointers:
+    - /spec/replicas
