@@ -7,15 +7,15 @@ Create local user with apikey and login capabilities by updating argocd-cm for u
 Create user guest with only login capability
 Create user deploy-agent with only apikey capability
 Use argocd account command for:
-• Listing users 
+- Listing users 
     `argocd account list`
-• Get user details
+- Get user details
     `argocd account get --account <name>`
-• Set user password
+- Set user password
     `argocd account update-password --account <name> --current-password <current-user-password> --new-password <new-user-password>`
     first set:
     `argocd account update-password --account <new-account-name> --current-password <admin-password> --new-password <new-account-password>`
-• Generate auth token
+- Generate auth token
     `argocd account generate-token --account <name>`
 
 Create master policy that allows all actions on applications, projects and repositories and assign it to your user.
