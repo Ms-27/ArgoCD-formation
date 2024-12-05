@@ -1,7 +1,7 @@
 # ArgoCD & Helm
 
 ### Exercice 1
-Crée une application ‘helmargo’ via un fichier yaml de type Application :
+Créé une application ‘helmargo’ via un fichier yaml de type Application :
 - https://github.com/mkonzali/DemoHelmChart.git
 - Namespace spring-apps-dev
 - Projet spring-apps
@@ -13,7 +13,7 @@ Explorer le Cm et le Secret, modifier leurs valeurs et tester avec l’endpoint 
 - Passer un paramètre dans le yaml d’application image.tag= 2.0.0 et surveiller l’appli
 - Ajouter un champ à ignorer avec ignoreDifferences et tester
 
-### Exercice 2
+### Exercice 2
 Pour plus de security créer un repos séparé pour les secrets
 Pour que ce soit accessibles par les devs, créer un repos séparé pour les configs
 Créer 2 nouvelles appli argocd à partir de ces 2 repos
